@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mbpbc1:bridge-config
+	xmlns:mbpbc1="http://model.skytv.co.nz/bookablepromo-bridgeconfig/v1"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://model.skytv.co.nz/bookablepromo-bridgeconfig/v1 bookablepromo-bridgeconfig.xsd ">
+	<mbpbc1:endpoint checkHeartbeat="true"
+		heartbeatTimeout="120" host="localhost" id="PanoramaAutomation1" port="4444"
+		restartOnFailedHeartbeat="true" type="Probel" />
+	<mbpbc1:endpoint checkHeartbeat="true"
+		heartbeatTimeout="120" host="localhost" id="PanoramaAutomation2" port="4445"
+		restartOnFailedHeartbeat="true" type="Probel" />
+	<mbpbc1:endpoint checkHeartbeat="true"
+		heartbeatTimeout="120" host="localhost" id="AlbanyAutomation1" port="4446"
+		restartOnFailedHeartbeat="true" type="Harris" />
+</mbpbc1:bridge-config>

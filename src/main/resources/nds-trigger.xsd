@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema targetNamespace="urn:nnds:trigger:01:01" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:trg="urn:nnds:trigger:01:01"
+  elementFormDefault="qualified" attributeFormDefault="unqualified">
+  <!-- Requests -->
+  <xsd:element name="Trigger" type="trg:TriggerType" />
+  <xsd:complexType name="TriggerType" abstract="true">
+    <xsd:sequence>
+      <xsd:element name="Target" type="xsd:string" />
+      <xsd:element name="ActualTime" type="xsd:dateTime" />
+      <xsd:element name="Type" type="xsd:anyURI" maxOccurs="unbounded" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="UnscheduledTrigger">
+    <xsd:complexContent>
+      <xsd:extension base="trg:TriggerType">
+        <xsd:sequence>
+          <xsd:element name="Key" type="xsd:string" />
+          <xsd:element name="UriExt" type="xsd:anyURI" minOccurs="0"/>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <!-- Responses -->
+  <xsd:element name="TriggerResponse" type="trg:TriggerResponseType" />
+  <xsd:complexType name="TriggerResponseType">
+    <xsd:sequence>
+      <xsd:element name="errorComponent" type="xsd:anyURI" />
+      <xsd:element name="errorCode" type="xsd:unsignedInt" />
+      <xsd:element name="errorDescription" type="xsd:string" />
+    </xsd:sequence>
+  </xsd:complexType>
+</xsd:schema>

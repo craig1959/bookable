@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema targetNamespace="http://model.skytv.co.nz/bookablepromo-bridgeconfig/v1" elementFormDefault="qualified" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:mbpbc1="http://model.skytv.co.nz/bookablepromo-bridgeconfig/v1">
+
+  <element name="bridge-config" type="mbpbc1:ConfigType" />
+
+  <complexType name="EndpointType">
+    <attribute name="id" type="string" use="required" />
+    <attribute name="type" type="string" use="required" />
+    <attribute name="host" type="string" use="required" />
+    <attribute name="port" type="int" use="required" />
+    <attribute name="heartbeatTimeout" type="int" default="120"/>
+    <attribute name="checkHeartbeat" type="boolean" default="true"/>
+    <attribute name="restartOnFailedHeartbeat" type="boolean" default="true"/>
+  </complexType>
+
+  <complexType name="ConfigType">
+    <sequence>
+      <element name="endpoint" minOccurs="0" maxOccurs="unbounded" type="mbpbc1:EndpointType"></element>
+    </sequence>
+  </complexType>
+</schema>
